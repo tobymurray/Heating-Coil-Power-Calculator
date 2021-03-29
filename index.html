@@ -12,14 +12,9 @@
 
   <script>
     function submit() {
-      console.log("Submit!");
       var ohmPerMeter = document.getElementById('ohmPerMeter').value;
       var lengthInMeters = document.getElementById('lengthInMeters').value;
       var voltage = document.getElementById('voltage').value;
-
-      console.log("Ω/m: " + ohmPerMeter);
-      console.log("Length in meters: " + lengthInMeters);
-      console.log("Voltage: " + voltage);
 
       var outputTotalPower = document.getElementById('outputTotalPower')
       var outputPowerPerMeter = document.getElementById('outputPowerPerMeter');
@@ -28,6 +23,7 @@
       var powerPerMeter = totalPower / lengthInMeters;
       outputTotalPower.innerHTML = totalPower;
       outputPowerPerMeter.innerHTML = powerPerMeter;
+
       return false;
     }
 
@@ -41,26 +37,26 @@
 </head>
 
 <body>
-  
+
   <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="card w-25">
-      <form id="form">
-        <div class="mb-3">
-          <label for="ohmPerMeter" class="form-label fs-2">Resistance (Ω/m):</label><br>
-          <input type="number" id="ohmPerMeter" name="ohmPerMeter" class="form-control"><br>
-        </div>
-        <div class="mb-3">
-          <label for="lengthInMeters" class="form-label fs-2">Length (m):</label><br>
-          <input type="number" id="lengthInMeters" name="lengthInMeters" class="form-control">
-        </div>
-        <div class="mb-3">
-          <label for="voltage" class="form-label fs-2">Voltage (V):</label><br>
-          <input type="number" id="voltage" name="voltage" value="120" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+        <form id="form">
+          <div class="mb-3">
+            <label for="ohmPerMeter" class="form-label fs-2">Resistance (Ω/m):</label><br>
+            <input type="number" id="ohmPerMeter" name="ohmPerMeter" class="form-control"><br>
+          </div>
+          <div class="mb-3">
+            <label for="lengthInMeters" class="form-label fs-2">Length (m):</label><br>
+            <input type="number" id="lengthInMeters" name="lengthInMeters" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="voltage" class="form-label fs-2">Voltage (V):</label><br>
+            <input type="number" id="voltage" name="voltage" value="120" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
       <div class="row">
         <div class="col col-xs-6">
           <p class="fs-1">Total power is: <mark id="outputTotalPower">0</mark> W</p>
